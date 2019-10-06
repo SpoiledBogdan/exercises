@@ -2,18 +2,20 @@
 
 int main()
 {
-    int c, flag;
-
-    flag = 0;
+    int c, space;
+    
+    space = 0;
+    
     while ((c = getchar()) != EOF) {
-        if (c != ' ') {
+        if (c == ' ')
+            ++space;
+            
+        if (c != ' ')
+            space = 0;
+            
+        if (space <= 1)
             putchar(c);
-        flag = 0;
-    	}
-    else if (flag == 0) {
-        putchar(c);
-        flag = 1;
-    	}
     }
+    
     return 0;
 }
