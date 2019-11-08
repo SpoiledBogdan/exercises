@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*ANCII*/
+/*ASCII*/
 #define TAB 9	
 #define BACK 8
 #define SLASH 92
