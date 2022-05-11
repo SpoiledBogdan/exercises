@@ -1,26 +1,28 @@
+//word length
 #include <stdio.h>
-#define MAXLEN 10
+#define LEN 10
+
 int main(void) {
-    int c, i, s;
-    int word_length[MAXLEN];
+	int c, word[LEN];
+	int count = 0;
 
-    s = 0;
-    for (i = 0; i < MAXLEN; ++i)
-        word_length[i] = 0;
-    while ((c = getchar()) != EOF) 
+	for (int i = 0; i < LEN; ++i) {
+		word[i] = 0;
+	}
 
-        if (c == ' ' || c == '\t' || c == '\n') 
-        {
-            if (s >= MAXLEN)
-                word_length[0] += 1;
-            else if (s > 0)
-                word_length[s] += 1;
-            s = 0; }
-        else
-            ++s;
+	while ((c = getchar()) != EOF) {
+		if (c == '\n' || c == '\t' || c == ' ') {
+			count++;
+		}
 
-    for (i = 0; i < MAXLEN; ++i)
-        printf("length %d: %d\n", i, word_length[i]);
+		else {
+			++word[count];
+		}
+	}
 
-    return 0;
+	for (int i = 0; i < LEN; ++i) {
+		printf("length words %d- %d\n", i, word[i]);
+	}
+
+	return 0;
 }
